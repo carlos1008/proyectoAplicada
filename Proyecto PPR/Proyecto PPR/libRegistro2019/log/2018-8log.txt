@@ -1,0 +1,16 @@
+2018-8-13 :: 12:15:52	Error	myConnection	ConectToMysql()	java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+2018-8-13 :: 12:15:56	Error	myConnection	ConectToMysql()	java.lang.ClassNotFoundException: com.mysql.jdbc.Driver
+2018-8-20 :: 12:19:7	Error	DataBase	backup()	java.io.IOException: Cannot run program "C:\Users\LABORATORIO": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
+2018-8-20 :: 12:19:41	Error	DataBase	backup()	java.io.IOException: Cannot run program "C:\Users\LABORATORIO": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
+2018-8-20 :: 12:20:35	Error	DataBase	backup()	java.io.IOException: Cannot run program "C:\Users\LABORATORIO": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
+2018-8-20 :: 12:22:3	Error	DataBase	backup()	java.io.IOException: Cannot run program "C:\Users\LABORATORIO": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
+2018-8-20 :: 12:22:22	Error	DataBase	backup()	java.io.IOException: Cannot run program "C:\Users\LABORATORIO": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
+2018-8-20 :: 12:28:27	Error	DataBase	FileCopy()	Hubo un error de entrada/salida!!!
+2018-8-20 :: 12:30:35	Error	DataBase	FileCopy()	Hubo un error de entrada/salida!!!
+2018-8-20 :: 12:30:35	Error	DataBase	backup()	Could not take mysql backup
+2018-8-20 :: 12:30:43	Error	DataBase	FileCopy()	Hubo un error de entrada/salida!!!
+2018-8-20 :: 12:30:45	Error	DataBase	backup()	Could not take mysql backup
+2018-8-20 :: 12:31:51	Error	DataBase	FileCopy()	Hubo un error de entrada/salida!!!
+2018-8-20 :: 12:32:19	Error	DataBase	FileCopy()	Hubo un error de entrada/salida!!!
+2018-8-20 :: 12:35:58	Error	DataBase	backup()	java.io.IOException: Cannot run program "mysqldump ": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
+2018-8-20 :: 12:49:50	Error	DataBase	backup()	java.io.IOException: Cannot run program "mysqldump": CreateProcess error=2, El sistema no puede encontrar el archivo especificado
