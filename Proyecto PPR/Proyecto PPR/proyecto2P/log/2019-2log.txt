@@ -19,3 +19,5 @@
 2019-2-14 :: 14:40:30	Error	daoRegistro	create()	java.lang.NullPointerException
 2019-2-14 :: 14:40:58	Error	daoRegistro	create()	java.lang.NullPointerException
 2019-2-14 :: 16:0:12	Error	daoRegistro	create()	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'reg_tipo' at row 1
+2019-2-15 :: 3:19:39	Error	daoRegistro	create()	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'reg_fecha' at row 1
+2019-2-15 :: 3:21:10	Error	daoRegistro	create()	com.mysql.jdbc.MysqlDataTruncation: Data truncation: Data too long for column 'reg_fecha' at row 1

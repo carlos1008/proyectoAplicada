@@ -23,6 +23,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -268,7 +270,8 @@ public class frmMarcacion extends javax.swing.JFrame {
     public static String nombreFoto;
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+     
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "1");
         }
     }//GEN-LAST:event_btn1ActionPerformed
@@ -278,55 +281,55 @@ public class frmMarcacion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "2");
         }
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "3");
         }
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "4");
         }
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "5");
         }
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "6");
         }
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "7");
         }
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        if (txtCodigo.getText().length() < 5) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "8");
         }
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        if (txtCodigo.getText().length() <= 4) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "9");
         }
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        if (txtCodigo.getText().length() <= 4) {
+        if (txtCodigo.getText().length() < 4) {
             txtCodigo.setText(txtCodigo.getText() + "0");
         }
     }//GEN-LAST:event_btn0ActionPerformed
@@ -342,19 +345,7 @@ public class frmMarcacion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistroActionPerformed
 
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
-        try {
-            if (txtCodigo.getText().length() == 4 && new daoUsuario().validarCodigos(txtCodigo.getText())) {
-                if (!isRunning) {
-                    webcam.open();
-                    isRunning = true;
-                    new VideoFeedTaker().start();
-                } else {
-                    isRunning = false;
-                }
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(frmMarcacion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+      
     }//GEN-LAST:event_txtCodigoActionPerformed
 
     private void btnMarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcarActionPerformed
@@ -374,7 +365,7 @@ public class frmMarcacion extends javax.swing.JFrame {
 
                 try {
                     String hora = LocalTime.now().toString();
-                    nombreFoto = txtCodigo.getText() + hora;
+                    nombreFoto = txtCodigo.getText() +" - "+ hora;
                     ImageIO.write(webcam.getImage(), "JPG", new File(url.substring(0) + nombreFoto + ".jpg"));
                     webcam.close();
 
@@ -397,9 +388,10 @@ public class frmMarcacion extends javax.swing.JFrame {
                     new VideoFeedTaker().start();
                     Registro r = new Registro();
                     LocalTime ahora = LocalTime.now();
+                    LocalDateTime mes = LocalDateTime.now();
                     r.setFoto(url.substring(0) + nombreFoto + ".jpg");
-                    r.setFecha(ahora.toString());
-                    r.setHora(String.valueOf(ahora.getHour()));
+                    r.setHora(ahora.toString());
+                    r.setFecha(mes.toString());
                     if (rbEntrada.isSelected()) {
                         r.setTipo(rbEntrada.getText());
                     } else {
